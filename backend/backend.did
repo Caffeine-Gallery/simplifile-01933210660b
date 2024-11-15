@@ -1,0 +1,15 @@
+type Directory = 
+ record {
+   files: vec text;
+   name: text;
+   subdirectories: vec text;
+ };
+service : {
+  createDirectory: (text, text) -> (bool);
+  createFile: (text, text, text) -> (bool);
+  deleteDirectory: (text, text) -> (bool);
+  deleteFile: (text, text) -> (bool);
+  listDirectory: (text) -> (opt Directory) query;
+  readFile: (text) -> (opt text) query;
+  updateFile: (text, text) -> (bool);
+}
